@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CrcError" xml:space="preserve">
+    <value>Ошибка контрольной суммы</value>
+  </data>
+  <data name="DepthNotSupported" xml:space="preserve">
+    <value>Чтение в глубину для этого параметра не поддерживается, только текущее и предыдущее значение.</value>
+  </data>
+  <data name="ErrorReadDT" xml:space="preserve">
+    <value>Ошибка при чтении даты-веремени:{0}</value>
+  </data>
+  <data name="EvAccess1" xml:space="preserve">
+    <value>Открытие контактной крышки счетчика</value>
+  </data>
+  <data name="EvAccess2" xml:space="preserve">
+    <value>Закрытие контактной крышки счетчика</value>
+  </data>
+  <data name="EvAccess3" xml:space="preserve">
+    <value>Открытие корпуса счетчика</value>
+  </data>
+  <data name="EvAccess4" xml:space="preserve">
+    <value>Закрытие корпуса счетчика</value>
+  </data>
+  <data name="EvAccess5" xml:space="preserve">
+    <value>Превышено количество попыток ввода пароля</value>
+  </data>
+  <data name="EvArchErr1" xml:space="preserve">
+    <value>Начало воздействия магнитным полем</value>
+  </data>
+  <data name="EvArchErr10" xml:space="preserve">
+    <value>Ошибка записи часов реального времени</value>
+  </data>
+  <data name="EvArchErr11" xml:space="preserve">
+    <value>Ошибка температурной компенсации часов</value>
+  </data>
+  <data name="EvArchErr2" xml:space="preserve">
+    <value>Окончание воздействия магнитным полем</value>
+  </data>
+  <data name="EvArchErr3" xml:space="preserve">
+    <value>Низкий заряд батареи</value>
+  </data>
+  <data name="EvArchErr4" xml:space="preserve">
+    <value>Не установлены часы реального времени</value>
+  </data>
+  <data name="EvArchErr5" xml:space="preserve">
+    <value>Аппаратный сбой часов реального времени</value>
+  </data>
+  <data name="EvArchErr6" xml:space="preserve">
+    <value>Ошибка регистров накопленных значений энергии</value>
+  </data>
+  <data name="EvArchErr7" xml:space="preserve">
+    <value>Ошибка калибровочных значений</value>
+  </data>
+  <data name="EvArchErr8" xml:space="preserve">
+    <value>Батарея отсутствует</value>
+  </data>
+  <data name="EvArchErr9" xml:space="preserve">
+    <value>Ошибка чтения часов реального времени</value>
+  </data>
+  <data name="EvDevOff" xml:space="preserve">
+    <value>Отключение питания счетчика</value>
+  </data>
+  <data name="EvDevOn" xml:space="preserve">
+    <value>Включение питания счетчика</value>
+  </data>
+  <data name="EvDevPit" xml:space="preserve">
+    <value>Отключение сетевого напряжения</value>
+  </data>
+  <data name="EvProgr1" xml:space="preserve">
+    <value>Запись суточной таблицы энергии</value>
+  </data>
+  <data name="EvProgr10" xml:space="preserve">
+    <value>Синхронизация времени</value>
+  </data>
+  <data name="EvProgr11" xml:space="preserve">
+    <value>Запись сетевого адреса</value>
+  </data>
+  <data name="EvProgr12" xml:space="preserve">
+    <value>Запись идентификатора пользователя</value>
+  </data>
+  <data name="EvProgr13" xml:space="preserve">
+    <value>Запись параметров дисплея</value>
+  </data>
+  <data name="EvProgr14" xml:space="preserve">
+    <value>Запись параметров оптопорта</value>
+  </data>
+  <data name="EvProgr15" xml:space="preserve">
+    <value>Запись параметров RS485</value>
+  </data>
+  <data name="EvProgr16" xml:space="preserve">
+    <value>Запись параметров дополнительного интерфейса</value>
+  </data>
+  <data name="EvProgr17" xml:space="preserve">
+    <value>Запись параметров телеметрии</value>
+  </data>
+  <data name="EvProgr18" xml:space="preserve">
+    <value>Запись коэффициента трансформации тока</value>
+  </data>
+  <data name="EvProgr19" xml:space="preserve">
+    <value>Запись коэффициента трансформации напряжения</value>
+  </data>
+  <data name="EvProgr2" xml:space="preserve">
+    <value>Запись суточной таблицы мощности</value>
+  </data>
+  <data name="EvProgr20" xml:space="preserve">
+    <value>Запись интервала интеграции</value>
+  </data>
+  <data name="EvProgr21" xml:space="preserve">
+    <value>Запись лимитов мощности</value>
+  </data>
+  <data name="EvProgr22" xml:space="preserve">
+    <value>Запись лимита энергии</value>
+  </data>
+  <data name="EvProgr23" xml:space="preserve">
+    <value>Установка режима функционального светодиода</value>
+  </data>
+  <data name="EvProgr3" xml:space="preserve">
+    <value>Запись основного тарифного расписания</value>
+  </data>
+  <data name="EvProgr4" xml:space="preserve">
+    <value>Запись резервного тарифного расписания</value>
+  </data>
+  <data name="EvProgr5" xml:space="preserve">
+    <value>Запись Флагов пасхи и радуницы</value>
+  </data>
+  <data name="EvProgr6" xml:space="preserve">
+    <value>Запись даты и времени переключения с основного на резервное расписание</value>
+  </data>
+  <data name="EvProgr7" xml:space="preserve">
+    <value>Запись дат и времен автоматического перевода времени на летний/зимний период</value>
+  </data>
+  <data name="EvProgr8" xml:space="preserve">
+    <value>Запись даты и времени</value>
+  </data>
+  <data name="EvProgr9" xml:space="preserve">
+    <value>Запись пароля</value>
+  </data>
+  <data name="EvSostFaz1" xml:space="preserve">
+    <value>Восстановление нормального напряжения фазы A</value>
+  </data>
+  <data name="EvSostFaz10" xml:space="preserve">
+    <value>Нет напряжения на фазе C</value>
+  </data>
+  <data name="EvSostFaz11" xml:space="preserve">
+    <value>Падение напряжения фазы C ниже допустимого</value>
+  </data>
+  <data name="EvSostFaz12" xml:space="preserve">
+    <value>Превышение допустимого напряжения фазы C</value>
+  </data>
+  <data name="EvSostFaz13" xml:space="preserve">
+    <value>Восстановление нормального тока фазы A</value>
+  </data>
+  <data name="EvSostFaz14" xml:space="preserve">
+    <value>Превышение допустимого тока фазы A</value>
+  </data>
+  <data name="EvSostFaz15" xml:space="preserve">
+    <value>Восстановление нормального тока фазы B</value>
+  </data>
+  <data name="EvSostFaz16" xml:space="preserve">
+    <value>Превышение допустимого тока фазы B</value>
+  </data>
+  <data name="EvSostFaz17" xml:space="preserve">
+    <value>Восстановление нормального тока фазы C</value>
+  </data>
+  <data name="EvSostFaz18" xml:space="preserve">
+    <value>Превышение допустимого тока фазы C</value>
+  </data>
+  <data name="EvSostFaz2" xml:space="preserve">
+    <value>Нет напряжения на фазе A</value>
+  </data>
+  <data name="EvSostFaz3" xml:space="preserve">
+    <value>Падение напряжения фазы A ниже допустимого</value>
+  </data>
+  <data name="EvSostFaz4" xml:space="preserve">
+    <value>Превышение допустимого напряжения фазы A</value>
+  </data>
+  <data name="EvSostFaz5" xml:space="preserve">
+    <value>Восстановление нормального напряжения фазы B</value>
+  </data>
+  <data name="EvSostFaz6" xml:space="preserve">
+    <value>Нет напряжения на фазе B</value>
+  </data>
+  <data name="EvSostFaz7" xml:space="preserve">
+    <value>Падение напряжения фазы B ниже допустимого</value>
+  </data>
+  <data name="EvSostFaz8" xml:space="preserve">
+    <value>Превышение допустимого напряжения фазы B</value>
+  </data>
+  <data name="EvSostFaz9" xml:space="preserve">
+    <value>Восстановление нормального напряжения фазы C</value>
+  </data>
+  <data name="NoKI" xml:space="preserve">
+    <value>В ответе не найден KI</value>
+  </data>
+  <data name="NoKU" xml:space="preserve">
+    <value>В ответе не найден KU</value>
+  </data>
+  <data name="NoLast" xml:space="preserve">
+    <value>Нет значения в счетчике</value>
+  </data>
+  <data name="NoSN" xml:space="preserve">
+    <value>В ответе не найден серийный номер</value>
+  </data>
+  <data name="NOT_PARAM" xml:space="preserve">
+    <value>Прибор '{0}' не подерживает параметр {1}, дискретность {2}{3}. Рекомендуем обновить прошивку прибора</value>
+  </data>
+  <data name="ReadKPRKIKU" xml:space="preserve">
+    <value>Чтение KI: {0}, KU:{1}</value>
+  </data>
+  <data name="READ_IM" xml:space="preserve">
+    <value>Чтение мгновенных значений. Результат: {0}</value>
+  </data>
+  <data name="SliceTimeNotEqual" xml:space="preserve">
+    <value>Время дыры:{0} не совпало с временем среза:{1}</value>
+  </data>
+  <data name="Test_DT" xml:space="preserve">
+    <value>Чтение времени</value>
+  </data>
+  <data name="Test_SN" xml:space="preserve">
+    <value>Чтение серийного номера</value>
+  </data>
+  <data name="Test_SV" xml:space="preserve">
+    <value>Чтение версии</value>
+  </data>
+  <data name="NotEqualAnswerPacket" xml:space="preserve">
+    <value>Заголовок ответа посылки не соответсвует заголовку запроса.</value>
+  </data>
+</root>

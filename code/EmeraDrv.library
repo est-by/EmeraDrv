@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Library Description="Библиотека драйвера Энергомера CE-301" Guid="est.by:EmeraLibrary"
+         MajorVersion="1" MinorVersion="1" xmlns="http://schemas.est.by/library/root/2010"
+         OutputPath="..\..\..\..\..\..\..\bin">
+
+  <Dependence LibraryFile="..\..\..\..\..\..\..\bin\library\ElectricAccount.library"/>
+  <FileDll CodeBase="EmeraDrv.dll">
+    <ObjectModel FileTclass="EmeraSetting.tclass" />
+    <RegComponentImpls>
+      <RegComponentImpl 
+        RefTypeIdDesc="Sys.Types.Components.DriverElectroClient" 
+        TypeIdImpl="Sys.Services.Drv.Emera.EmeraDriver" 
+        Guid="est.by:Bus.EmeraDrvClientImpl" />
+    </RegComponentImpls>
+  </FileDll>
+</Library>
