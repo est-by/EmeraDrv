@@ -1,0 +1,10 @@
+<Project>
+  <Import Project = "$([MSBuild]::GetPathOfFileAbove('core.build.props', '$(MSBuildThisFileDirectory)../'))" />
+  <Import Project = "$([MSBuild]::GetPathOfFileAbove('core.build.targets', '$(MSBuildThisFileDirectory)../'))" />
+  <ItemGroup>
+    <ProjectFiles Include="code\EmeraDrv.core.csproj"/>
+  </ItemGroup>
+  <Target Name="ExClean">
+    <RemoveDir Directories="code\obj" />  
+  </Target>
+</Project>

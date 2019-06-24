@@ -1,0 +1,16 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <RootPath>..\..\..\..\..\..\</RootPath>
+  </PropertyGroup>
+  <Import Project="$(RootPath)root.setting"/>
+
+  <ItemGroup Condition="'$(OS)'=='Win'">
+    <ProjectFiles Include="code\EmeraDrv.csproj"/>
+<!--
+    <ProjectFiles Condition="'$(Test)'=='yes'" Include="test\MesDrv.Test.csproj"/>
+-->
+  </ItemGroup>
+
+  <Import Project="$(RootPath)root.traversal.targets"/>
+  <Import Project="$(RootPath)tools.tclass.targets"/>
+</Project>
