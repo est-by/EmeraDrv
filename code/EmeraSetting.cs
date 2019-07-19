@@ -12,24 +12,53 @@ namespace Sys.Services.Drv {
     using System;
     
     
-    /// <summary>
-    /// предусмотрено 2 уровня доступа – основной и вспомогательный
-    /// </summary>
-    public enum EmeraProtectLevel : byte {
-        
-        /// <summary>
-        /// Уровень отсутствует
-        /// </summary>
-        None = 2,
-        
-        /// <summary>
-        /// Основной уровень позволяет модифицировать все параметры, отмеченные знаком ‘+’ в полях                    ‘Модификация’ и ‘Обнуление’ таблицы A.1 приложения А
-        /// </summary>
-        Base = 0,
-    }
-    
     /// <summary/>
     public partial class EmeraSharedSetting : Sys.Encodeable.IEncodeableObject {
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 1
+        /// </summary>
+        private bool _enblcountertariff1 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 2
+        /// </summary>
+        private bool _enblcountertariff2 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 3
+        /// </summary>
+        private bool _enblcountertariff3 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 4
+        /// </summary>
+        private bool _enblcountertariff4 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 5
+        /// </summary>
+        private bool _enblcountertariff5 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 6
+        /// </summary>
+        private bool _enblcountertariff6 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 7
+        /// </summary>
+        private bool _enblcountertariff7 = false;
+        
+        /// <summary>
+        /// Поле для свойства Забирать показания по тарифу 8
+        /// </summary>
+        private bool _enblcountertariff8 = false;
+        
+        /// <summary>
+        /// Поле для свойства Опрос получасов. Если выключен, то запбирать только сутки и месяц.
+        /// </summary>
+        private bool _enbl30min = true;
         
         /// <summary>
         /// Поле для свойства Включить корректировку времени
@@ -37,29 +66,14 @@ namespace Sys.Services.Drv {
         private bool _enbltimecorr = true;
         
         /// <summary>
-        /// Поле для свойства Включить опрос трехминутных значений
-        /// </summary>
-        private bool _enbl3min = false;
-        
-        /// <summary>
         /// Поле для свойства Включить опрос событий
         /// </summary>
-        private bool _enblevents;
+        private bool _enblevents = false;
         
         /// <summary>
         /// Поле для свойства Включить опрос мгновенных значений
         /// </summary>
         private bool _enblim = false;
-        
-        /// <summary>
-        /// Поле для свойства Уровень доступа. Если включен то                    система производит установку времени если нет корректировку
-        /// </summary>
-        private Sys.Services.Drv.EmeraProtectLevel _level = Sys.Services.Drv.EmeraProtectLevel.None;
-        
-        /// <summary>
-        /// Поле для свойства Пароль по умолчанию
-        /// </summary>
-        private string _psw = "00000000";
         
         /// <summary>
         /// Поле для свойства Рассписание синхронизации архивных данных
@@ -74,13 +88,19 @@ namespace Sys.Services.Drv {
         /// <summary>
         /// Интернал конструктор
         /// </summary>
-        internal EmeraSharedSetting(bool enblTimeCorr, bool enbl3min, bool enblEvents, bool enblIm, Sys.Services.Drv.EmeraProtectLevel level, string psw, Sys.Types.Components.ScheduleDbWrap arch, Sys.Types.Components.ScheduleDbWrap im) {
+        internal EmeraSharedSetting(bool enblCounterTariff1, bool enblCounterTariff2, bool enblCounterTariff3, bool enblCounterTariff4, bool enblCounterTariff5, bool enblCounterTariff6, bool enblCounterTariff7, bool enblCounterTariff8, bool enbl30min, bool enblTimeCorr, bool enblEvents, bool enblIm, Sys.Types.Components.ScheduleDbWrap arch, Sys.Types.Components.ScheduleDbWrap im) {
+            this.EnblCounterTariff1 = enblCounterTariff1;
+            this.EnblCounterTariff2 = enblCounterTariff2;
+            this.EnblCounterTariff3 = enblCounterTariff3;
+            this.EnblCounterTariff4 = enblCounterTariff4;
+            this.EnblCounterTariff5 = enblCounterTariff5;
+            this.EnblCounterTariff6 = enblCounterTariff6;
+            this.EnblCounterTariff7 = enblCounterTariff7;
+            this.EnblCounterTariff8 = enblCounterTariff8;
+            this.Enbl30min = enbl30min;
             this.EnblTimeCorr = enblTimeCorr;
-            this.Enbl3min = enbl3min;
             this.EnblEvents = enblEvents;
             this.EnblIm = enblIm;
-            this.Level = level;
-            this.Psw = psw;
             this.Arch = arch;
             this.Im = im;
         }
@@ -92,6 +112,114 @@ namespace Sys.Services.Drv {
         }
         
         /// <summary>
+        /// Свойство Забирать показания по тарифу 1
+        /// </summary>
+        public virtual bool EnblCounterTariff1 {
+            get {
+                return _enblcountertariff1;
+            }
+            set {
+                this._enblcountertariff1 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 2
+        /// </summary>
+        public virtual bool EnblCounterTariff2 {
+            get {
+                return _enblcountertariff2;
+            }
+            set {
+                this._enblcountertariff2 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 3
+        /// </summary>
+        public virtual bool EnblCounterTariff3 {
+            get {
+                return _enblcountertariff3;
+            }
+            set {
+                this._enblcountertariff3 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 4
+        /// </summary>
+        public virtual bool EnblCounterTariff4 {
+            get {
+                return _enblcountertariff4;
+            }
+            set {
+                this._enblcountertariff4 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 5
+        /// </summary>
+        public virtual bool EnblCounterTariff5 {
+            get {
+                return _enblcountertariff5;
+            }
+            set {
+                this._enblcountertariff5 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 6
+        /// </summary>
+        public virtual bool EnblCounterTariff6 {
+            get {
+                return _enblcountertariff6;
+            }
+            set {
+                this._enblcountertariff6 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 7
+        /// </summary>
+        public virtual bool EnblCounterTariff7 {
+            get {
+                return _enblcountertariff7;
+            }
+            set {
+                this._enblcountertariff7 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Забирать показания по тарифу 8
+        /// </summary>
+        public virtual bool EnblCounterTariff8 {
+            get {
+                return _enblcountertariff8;
+            }
+            set {
+                this._enblcountertariff8 = value;
+            }
+        }
+        
+        /// <summary>
+        /// Свойство Опрос получасов. Если выключен, то запбирать только сутки и месяц.
+        /// </summary>
+        public virtual bool Enbl30min {
+            get {
+                return _enbl30min;
+            }
+            set {
+                this._enbl30min = value;
+            }
+        }
+        
+        /// <summary>
         /// Свойство Включить корректировку времени
         /// </summary>
         public virtual bool EnblTimeCorr {
@@ -100,18 +228,6 @@ namespace Sys.Services.Drv {
             }
             set {
                 this._enbltimecorr = value;
-            }
-        }
-        
-        /// <summary>
-        /// Свойство Включить опрос трехминутных значений
-        /// </summary>
-        public virtual bool Enbl3min {
-            get {
-                return _enbl3min;
-            }
-            set {
-                this._enbl3min = value;
             }
         }
         
@@ -136,30 +252,6 @@ namespace Sys.Services.Drv {
             }
             set {
                 this._enblim = value;
-            }
-        }
-        
-        /// <summary>
-        /// Свойство Уровень доступа. Если включен то                    система производит установку времени если нет корректировку
-        /// </summary>
-        public virtual Sys.Services.Drv.EmeraProtectLevel Level {
-            get {
-                return _level;
-            }
-            set {
-                this._level = value;
-            }
-        }
-        
-        /// <summary>
-        /// Свойство Пароль по умолчанию
-        /// </summary>
-        public virtual string Psw {
-            get {
-                return _psw;
-            }
-            set {
-                this._psw = value;
             }
         }
         
@@ -193,12 +285,18 @@ namespace Sys.Services.Drv {
         /// </summary>
         public virtual void Encode(Sys.Encodeable.IEncoderObject value) {
             value.PushNamespace("Sys.Services.Drv");
+            value.WriteBoolean("EnblCounterTariff1", this.EnblCounterTariff1, false);
+            value.WriteBoolean("EnblCounterTariff2", this.EnblCounterTariff2, false);
+            value.WriteBoolean("EnblCounterTariff3", this.EnblCounterTariff3, false);
+            value.WriteBoolean("EnblCounterTariff4", this.EnblCounterTariff4, false);
+            value.WriteBoolean("EnblCounterTariff5", this.EnblCounterTariff5, false);
+            value.WriteBoolean("EnblCounterTariff6", this.EnblCounterTariff6, false);
+            value.WriteBoolean("EnblCounterTariff7", this.EnblCounterTariff7, false);
+            value.WriteBoolean("EnblCounterTariff8", this.EnblCounterTariff8, false);
+            value.WriteBoolean("Enbl30min", this.Enbl30min, true);
             value.WriteBoolean("EnblTimeCorr", this.EnblTimeCorr, true);
-            value.WriteBoolean("Enbl3min", this.Enbl3min, false);
-            value.WriteBoolean("EnblEvents", this.EnblEvents);
+            value.WriteBoolean("EnblEvents", this.EnblEvents, false);
             value.WriteBoolean("EnblIm", this.EnblIm, false);
-            value.WriteByte("Level", ((byte)(this.Level)));
-            value.WriteString("Psw", this.Psw, "00000000");
             value.WriteEncodeable<Sys.Types.Components.ScheduleDbWrap>("Arch", this.Arch);
             value.WriteEncodeable<Sys.Types.Components.ScheduleDbWrap>("Im", this.Im);
             value.PopNamespace();
@@ -218,12 +316,18 @@ namespace Sys.Services.Drv {
         /// </summary>
         public virtual void Decode(Sys.Encodeable.IDecoderObject value) {
             value.PushNamespace("Sys.Services.Drv");
+            this.EnblCounterTariff1 = value.ReadBoolean("EnblCounterTariff1", false);
+            this.EnblCounterTariff2 = value.ReadBoolean("EnblCounterTariff2", false);
+            this.EnblCounterTariff3 = value.ReadBoolean("EnblCounterTariff3", false);
+            this.EnblCounterTariff4 = value.ReadBoolean("EnblCounterTariff4", false);
+            this.EnblCounterTariff5 = value.ReadBoolean("EnblCounterTariff5", false);
+            this.EnblCounterTariff6 = value.ReadBoolean("EnblCounterTariff6", false);
+            this.EnblCounterTariff7 = value.ReadBoolean("EnblCounterTariff7", false);
+            this.EnblCounterTariff8 = value.ReadBoolean("EnblCounterTariff8", false);
+            this.Enbl30min = value.ReadBoolean("Enbl30min", true);
             this.EnblTimeCorr = value.ReadBoolean("EnblTimeCorr", true);
-            this.Enbl3min = value.ReadBoolean("Enbl3min", false);
-            this.EnblEvents = value.ReadBoolean("EnblEvents");
+            this.EnblEvents = value.ReadBoolean("EnblEvents", false);
             this.EnblIm = value.ReadBoolean("EnblIm", false);
-            this.Level = ((Sys.Services.Drv.EmeraProtectLevel)(value.ReadByte("Level", ((byte)(this.Level)))));
-            this.Psw = value.ReadString("Psw", "00000000");
             this.Arch = value.ReadEncodeableClass<Sys.Types.Components.ScheduleDbWrap>("Arch", this.EmeraSharedSetting_CreateSys_Types_Components_ScheduleDbWrap);
             this.Im = value.ReadEncodeableClass<Sys.Types.Components.ScheduleDbWrap>("Im", this.EmeraSharedSetting_CreateSys_Types_Components_ScheduleDbWrap);
             value.PopNamespace();
@@ -240,28 +344,16 @@ namespace Sys.Services.Drv {
         private int _address;
         
         /// <summary>
-        /// Поле для свойства Считывать KU KI с устройства
+        /// Поле для свойства Пароль по умолчанию
         /// </summary>
-        private bool _ku_ki_dev;
-        
-        /// <summary>
-        /// Поле для свойства KI
-        /// </summary>
-        private double _ki = 1D;
-        
-        /// <summary>
-        /// Поле для свойства KU
-        /// </summary>
-        private double _ku = 1D;
+        private string _psw = "0000";
         
         /// <summary>
         /// Интернал конструктор
         /// </summary>
-        internal EmeraContentSetting(int address, bool kU_KI_Dev, double kI, double kU) {
+        internal EmeraContentSetting(int address, string psw) {
             this.Address = address;
-            this.KU_KI_Dev = kU_KI_Dev;
-            this.KI = kI;
-            this.KU = kU;
+            this.Psw = psw;
         }
         
         /// <summary>
@@ -283,38 +375,14 @@ namespace Sys.Services.Drv {
         }
         
         /// <summary>
-        /// Свойство Считывать KU KI с устройства
+        /// Свойство Пароль по умолчанию
         /// </summary>
-        public virtual bool KU_KI_Dev {
+        public virtual string Psw {
             get {
-                return _ku_ki_dev;
+                return _psw;
             }
             set {
-                this._ku_ki_dev = value;
-            }
-        }
-        
-        /// <summary>
-        /// Свойство KI
-        /// </summary>
-        public virtual double KI {
-            get {
-                return _ki;
-            }
-            set {
-                this._ki = value;
-            }
-        }
-        
-        /// <summary>
-        /// Свойство KU
-        /// </summary>
-        public virtual double KU {
-            get {
-                return _ku;
-            }
-            set {
-                this._ku = value;
+                this._psw = value;
             }
         }
         
@@ -325,9 +393,7 @@ namespace Sys.Services.Drv {
         public virtual void Encode(Sys.Encodeable.IEncoderObject value) {
             value.PushNamespace("Sys.Services.Drv");
             value.WriteInt32("Address", this.Address);
-            value.WriteBoolean("KU_KI_Dev", this.KU_KI_Dev);
-            value.WriteDouble("KI", this.KI, 1D);
-            value.WriteDouble("KU", this.KU, 1D);
+            value.WriteString("Psw", this.Psw, "0000");
             value.PopNamespace();
         }
         #endregion
@@ -339,9 +405,7 @@ namespace Sys.Services.Drv {
         public virtual void Decode(Sys.Encodeable.IDecoderObject value) {
             value.PushNamespace("Sys.Services.Drv");
             this.Address = value.ReadInt32("Address");
-            this.KU_KI_Dev = value.ReadBoolean("KU_KI_Dev");
-            this.KI = value.ReadDouble("KI", 1D);
-            this.KU = value.ReadDouble("KU", 1D);
+            this.Psw = value.ReadString("Psw", "0000");
             value.PopNamespace();
         }
         #endregion

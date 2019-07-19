@@ -4,9 +4,8 @@ using Sys.Types.HistoryWriter;
 using System;
 using System.Collections.Generic;
 
-namespace Sys.Services.Drv.Emera
+namespace Sys.Services.Drv.Emera.Def
 {
-  #region (class Phase)
   /// <summary>Значения по трем фазам</summary>
   public class Phase
   {
@@ -36,11 +35,11 @@ namespace Sys.Services.Drv.Emera
     /// <summary>Значение по фазе C</summary>
     public double Phase_C;
 
-    internal void Calc()
+    internal void Calc(double koef)
     {
-      this.Phase_A = (Phase_A) / 1000;
-      this.Phase_B = (Phase_B) / 1000;
-      this.Phase_C = (Phase_C) / 1000;
+      this.Phase_A = Phase_A * koef;
+      this.Phase_B = Phase_B * koef;
+      this.Phase_C = Phase_C * koef;
     }
 
     internal double Sum()
@@ -48,12 +47,16 @@ namespace Sys.Services.Drv.Emera
       return this.Phase_A + this.Phase_B +  this.Phase_C;
     }
   }
-  #endregion
 
-  #region (class InstantaneousActivePower)
   /// <summary>Мгновенная активная мощность</summary>
   public class InstantaneousActivePower
   {
+    internal InstantaneousActivePower(double totalPowerPhases, Phase insPowerPhase)
+    {
+      this.TotalPowerPhases = totalPowerPhases;
+      this.InsPowerPhase = insPowerPhase;
+    }
+
     public InstantaneousActivePower()
     {
     }
@@ -62,32 +65,24 @@ namespace Sys.Services.Drv.Emera
     public double TotalPowerPhases;
 
     /// <summary>Активная мощность по трем фазам</summary>
-    public Phase InsPowerPhase = new Phase();
+    public Phase InsPowerPhase;
 
-    internal void Calc()
+    internal void Calc(double koef)
     {
-      InsPowerPhase.Calc();
+      InsPowerPhase.Calc(koef);
     }
   }
-  #endregion
 
-  #region (class InstantaneousReactivePower)
   /// <summary>Мгновенная реактивная мощность</summary>
   public class InstantaneousReactivePower : InstantaneousActivePower
   {
   }
-  #endregion
 
-  #region (class InstantaneousValues)
   /// <summary>Мгновенные значения</summary>
   public class InstantaneousValues
   {
 
-    public void WriteTags(
-      StorageDataDriver storage, 
-      ElectroChannel eChannel, 
-      Quality quality, 
-      DateTimeUtc time)
+    public void WriteTags(StorageDataDriver storage, ElectroChannel eChannel, Quality quality, DateTimeUtc time)
     {
       var eid = new ElectroIMData(quality, time, 
         this.InsActivePower.InsPowerPhase.Phase_A,
@@ -109,13 +104,7 @@ namespace Sys.Services.Drv.Emera
       eid.WriteTags(eChannel);
     }
 
-    internal InstantaneousValues(
-      InstantaneousActivePower insActivePower, 
-      InstantaneousReactivePower insReactivePower, 
-      Phase voltage, 
-      Phase amperage, 
-      Phase powerFactor, 
-      double frequency)
+    internal InstantaneousValues(InstantaneousActivePower insActivePower, InstantaneousReactivePower insReactivePower, Phase voltage, Phase amperage, Phase powerFactor, double frequency)
     {
       this.InsActivePower = insActivePower;
       this.InsReactivePower = insReactivePower;
@@ -145,28 +134,28 @@ namespace Sys.Services.Drv.Emera
     }
 
     /// <summary>Мгновенная активная мощность</summary>
-    public InstantaneousActivePower InsActivePower = new InstantaneousActivePower();
+    public InstantaneousActivePower InsActivePower;
 
     /// <summary>Мгновенная реактивная мощность</summary>
-    public InstantaneousReactivePower InsReactivePower = new InstantaneousReactivePower();
+    public InstantaneousReactivePower InsReactivePower;
 
     /// <summary>Напряжение</summary>
-    public Phase Voltage = new Phase();
+    public Phase Voltage;
 
     /// <summary>Ток</summary>
-    public Phase Amperage = new Phase();
+    public Phase Amperage;
 
     /// <summary>Коэффициент мощности - косинус фи</summary>
-    public Phase PowerFactor = new Phase();
+    public Phase PowerFactor;
 
     /// <summary>Частота сети</summary>
     public double Frequency;
 
-    internal void Calc()
+    internal void Calc(double koef)
     {
-      InsActivePower.Calc();
-      InsReactivePower.Calc();
+      InsActivePower.Calc(koef);
+      InsReactivePower.Calc(koef);
     }
   }
-  #endregion
+
 }

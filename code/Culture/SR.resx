@@ -117,221 +117,209 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CrcError" xml:space="preserve">
+  <data name="ADJUSTMENT_TIME_BUTTONS" xml:space="preserve">
+    <value>Коррестировка времени кнопками</value>
+  </data>
+  <data name="ADJUSTMENT_TIME_CHANNELS" xml:space="preserve">
+    <value>Коррестировка времени по каналам связи</value>
+  </data>
+  <data name="ADMIN_RESET" xml:space="preserve">
+    <value>Изменение администратора</value>
+  </data>
+  <data name="AOFF" xml:space="preserve">
+    <value>Фаза А:откл</value>
+  </data>
+  <data name="AON" xml:space="preserve">
+    <value>Фаза А:вкл</value>
+  </data>
+  <data name="ARGUMENT" xml:space="preserve">
+    <value>Ошибочный аргумент</value>
+  </data>
+  <data name="AUTO_CALC_SUMMER_SEASON" xml:space="preserve">
+    <value>(авто.расчет сезона лето)</value>
+  </data>
+  <data name="AUTO_CALC_WINTER_SEASON" xml:space="preserve">
+    <value>(авто.расчет сезона зима)</value>
+  </data>
+  <data name="BLOCK_DAMAGED" xml:space="preserve">
+    <value>Блок поврежден</value>
+  </data>
+  <data name="BOFF" xml:space="preserve">
+    <value>Фаза B:откл</value>
+  </data>
+  <data name="BON" xml:space="preserve">
+    <value>Фаза B:вкл</value>
+  </data>
+  <data name="CHAIN_TERM" xml:space="preserve">
+    <value>Обрыв цепей ABC напряжения U или (и) тока I. </value>
+  </data>
+  <data name="CHANGE_PASSWORD" xml:space="preserve">
+    <value>Изменение пароля</value>
+  </data>
+  <data name="CHANGE_SET_TELEMETRY" xml:space="preserve">
+    <value>Изменение параметров телеметрии</value>
+  </data>
+  <data name="CHANGING_CONSTANTS" xml:space="preserve">
+    <value>Изменение констант</value>
+  </data>
+  <data name="CHANGING_DATE_CHANGE_SEASONS" xml:space="preserve">
+    <value>Изменение даты переключения сезонов</value>
+  </data>
+  <data name="CHG_ID" xml:space="preserve">
+    <value>(зав. номер)</value>
+  </data>
+  <data name="CHG_ID_USER" xml:space="preserve">
+    <value>(номер пользователя)</value>
+  </data>
+  <data name="CHG_KI_KU_FORMAT" xml:space="preserve">
+    <value>(KI KU или формат отображения)</value>
+  </data>
+  <data name="CHG_MASK_VIEW" xml:space="preserve">
+    <value>(маска отображения)</value>
+  </data>
+  <data name="CHG_NET_ID" xml:space="preserve">
+    <value>(сетевой адрес)</value>
+  </data>
+  <data name="CHG_PORT_SETT" xml:space="preserve">
+    <value>(параметры порта)</value>
+  </data>
+  <data name="CHG_TYPE_EQUIPMENT" xml:space="preserve">
+    <value>(тип прибора)</value>
+  </data>
+  <data name="CLOSING_COUNTER" xml:space="preserve">
+    <value>Закрытие крышки счетчика</value>
+  </data>
+  <data name="COFF" xml:space="preserve">
+    <value>Фаза C:откл</value>
+  </data>
+  <data name="CON" xml:space="preserve">
+    <value>Фаза C:вкл</value>
+  </data>
+  <data name="CRC" xml:space="preserve">
     <value>Ошибка контрольной суммы</value>
   </data>
-  <data name="DepthNotSupported" xml:space="preserve">
-    <value>Чтение в глубину для этого параметра не поддерживается, только текущее и предыдущее значение.</value>
+  <data name="DAMAGE_CALIBRATION_FILE" xml:space="preserve">
+    <value>Поврежен файл калибровки</value>
   </data>
-  <data name="ErrorReadDT" xml:space="preserve">
-    <value>Ошибка при чтении даты-веремени:{0}</value>
+  <data name="DEFECTIVE_EEPROM_1" xml:space="preserve">
+    <value>(Неисправно EEPROM 1)</value>
   </data>
-  <data name="EvAccess1" xml:space="preserve">
-    <value>Открытие контактной крышки счетчика</value>
+  <data name="DEFECTIVE_EEPROM_2" xml:space="preserve">
+    <value>(Неисправно EEPROM 2)</value>
   </data>
-  <data name="EvAccess2" xml:space="preserve">
-    <value>Закрытие контактной крышки счетчика</value>
+  <data name="DEFECTIVE_OZU" xml:space="preserve">
+    <value>(Неисправно OЗУ)</value>
   </data>
-  <data name="EvAccess3" xml:space="preserve">
-    <value>Открытие корпуса счетчика</value>
+  <data name="DEFECTIVE_PZU" xml:space="preserve">
+    <value>(Неисправно ПЗУ)</value>
   </data>
-  <data name="EvAccess4" xml:space="preserve">
-    <value>Закрытие корпуса счетчика</value>
+  <data name="DEVICE_BUSY" xml:space="preserve">
+    <value>Счетчик занят</value>
   </data>
-  <data name="EvAccess5" xml:space="preserve">
-    <value>Превышено количество попыток ввода пароля</value>
+  <data name="ERROR_CUT" xml:space="preserve">
+    <value>Запрошенный срез отличается от полученного. Возможно это связано с неточным временем</value>
   </data>
-  <data name="EvArchErr1" xml:space="preserve">
-    <value>Начало воздействия магнитным полем</value>
+  <data name="ERROR_DSP" xml:space="preserve">
+    <value>(Ошибка DSP)</value>
   </data>
-  <data name="EvArchErr10" xml:space="preserve">
-    <value>Ошибка записи часов реального времени</value>
+  <data name="ERROR_EXCHANGE_DSP" xml:space="preserve">
+    <value>(Ошибка обмена с DSP)</value>
   </data>
-  <data name="EvArchErr11" xml:space="preserve">
-    <value>Ошибка температурной компенсации часов</value>
+  <data name="EVENTS_DESC" xml:space="preserve">
+    <value>Журнал событий</value>
   </data>
-  <data name="EvArchErr2" xml:space="preserve">
-    <value>Окончание воздействия магнитным полем</value>
+  <data name="FUNCTION" xml:space="preserve">
+    <value>Неизвестная функция</value>
   </data>
-  <data name="EvArchErr3" xml:space="preserve">
-    <value>Низкий заряд батареи</value>
+  <data name="IM_DESC" xml:space="preserve">
+    <value>Мгновенные значения</value>
   </data>
-  <data name="EvArchErr4" xml:space="preserve">
-    <value>Не установлены часы реального времени</value>
+  <data name="MACHINE_ERROR" xml:space="preserve">
+    <value>Аппаратная ошибка</value>
   </data>
-  <data name="EvArchErr5" xml:space="preserve">
-    <value>Аппаратный сбой часов реального времени</value>
+  <data name="MAX_POWER_RESET" xml:space="preserve">
+    <value>Обнуление максимальной мощности</value>
   </data>
-  <data name="EvArchErr6" xml:space="preserve">
-    <value>Ошибка регистров накопленных значений энергии</value>
+  <data name="MEMORY_ERROR" xml:space="preserve">
+    <value>Ошибка памяти</value>
   </data>
-  <data name="EvArchErr7" xml:space="preserve">
-    <value>Ошибка калибровочных значений</value>
+  <data name="MODE_CHANGE" xml:space="preserve">
+    <value>Изменение режима</value>
   </data>
-  <data name="EvArchErr8" xml:space="preserve">
-    <value>Батарея отсутствует</value>
+  <data name="M_CALIBRATE" xml:space="preserve">
+    <value>(режим калибровки)</value>
   </data>
-  <data name="EvArchErr9" xml:space="preserve">
-    <value>Ошибка чтения часов реального времени</value>
+  <data name="M_NORM" xml:space="preserve">
+    <value>(нормальный режим)</value>
   </data>
-  <data name="EvDevOff" xml:space="preserve">
-    <value>Отключение питания счетчика</value>
+  <data name="M_VERIFICATION" xml:space="preserve">
+    <value>(режим поверки)</value>
   </data>
-  <data name="EvDevOn" xml:space="preserve">
-    <value>Включение питания счетчика</value>
+  <data name="NETWORK_PROBLEMS" xml:space="preserve">
+    <value>Помехи в сети</value>
   </data>
-  <data name="EvDevPit" xml:space="preserve">
-    <value>Отключение сетевого напряжения</value>
+  <data name="NOT_COMPLIANT_ADDRESS" xml:space="preserve">
+    <value>Не соответствие запрошенного и ответившего сетевого адреса</value>
   </data>
-  <data name="EvProgr1" xml:space="preserve">
-    <value>Запись суточной таблицы энергии</value>
-  </data>
-  <data name="EvProgr10" xml:space="preserve">
-    <value>Синхронизация времени</value>
-  </data>
-  <data name="EvProgr11" xml:space="preserve">
-    <value>Запись сетевого адреса</value>
-  </data>
-  <data name="EvProgr12" xml:space="preserve">
-    <value>Запись идентификатора пользователя</value>
-  </data>
-  <data name="EvProgr13" xml:space="preserve">
-    <value>Запись параметров дисплея</value>
-  </data>
-  <data name="EvProgr14" xml:space="preserve">
-    <value>Запись параметров оптопорта</value>
-  </data>
-  <data name="EvProgr15" xml:space="preserve">
-    <value>Запись параметров RS485</value>
-  </data>
-  <data name="EvProgr16" xml:space="preserve">
-    <value>Запись параметров дополнительного интерфейса</value>
-  </data>
-  <data name="EvProgr17" xml:space="preserve">
-    <value>Запись параметров телеметрии</value>
-  </data>
-  <data name="EvProgr18" xml:space="preserve">
-    <value>Запись коэффициента трансформации тока</value>
-  </data>
-  <data name="EvProgr19" xml:space="preserve">
-    <value>Запись коэффициента трансформации напряжения</value>
-  </data>
-  <data name="EvProgr2" xml:space="preserve">
-    <value>Запись суточной таблицы мощности</value>
-  </data>
-  <data name="EvProgr20" xml:space="preserve">
-    <value>Запись интервала интеграции</value>
-  </data>
-  <data name="EvProgr21" xml:space="preserve">
-    <value>Запись лимитов мощности</value>
-  </data>
-  <data name="EvProgr22" xml:space="preserve">
-    <value>Запись лимита энергии</value>
-  </data>
-  <data name="EvProgr23" xml:space="preserve">
-    <value>Установка режима функционального светодиода</value>
-  </data>
-  <data name="EvProgr3" xml:space="preserve">
-    <value>Запись основного тарифного расписания</value>
-  </data>
-  <data name="EvProgr4" xml:space="preserve">
-    <value>Запись резервного тарифного расписания</value>
-  </data>
-  <data name="EvProgr5" xml:space="preserve">
-    <value>Запись Флагов пасхи и радуницы</value>
-  </data>
-  <data name="EvProgr6" xml:space="preserve">
-    <value>Запись даты и времени переключения с основного на резервное расписание</value>
-  </data>
-  <data name="EvProgr7" xml:space="preserve">
-    <value>Запись дат и времен автоматического перевода времени на летний/зимний период</value>
-  </data>
-  <data name="EvProgr8" xml:space="preserve">
-    <value>Запись даты и времени</value>
-  </data>
-  <data name="EvProgr9" xml:space="preserve">
-    <value>Запись пароля</value>
-  </data>
-  <data name="EvSostFaz1" xml:space="preserve">
-    <value>Восстановление нормального напряжения фазы A</value>
-  </data>
-  <data name="EvSostFaz10" xml:space="preserve">
-    <value>Нет напряжения на фазе C</value>
-  </data>
-  <data name="EvSostFaz11" xml:space="preserve">
-    <value>Падение напряжения фазы C ниже допустимого</value>
-  </data>
-  <data name="EvSostFaz12" xml:space="preserve">
-    <value>Превышение допустимого напряжения фазы C</value>
-  </data>
-  <data name="EvSostFaz13" xml:space="preserve">
-    <value>Восстановление нормального тока фазы A</value>
-  </data>
-  <data name="EvSostFaz14" xml:space="preserve">
-    <value>Превышение допустимого тока фазы A</value>
-  </data>
-  <data name="EvSostFaz15" xml:space="preserve">
-    <value>Восстановление нормального тока фазы B</value>
-  </data>
-  <data name="EvSostFaz16" xml:space="preserve">
-    <value>Превышение допустимого тока фазы B</value>
-  </data>
-  <data name="EvSostFaz17" xml:space="preserve">
-    <value>Восстановление нормального тока фазы C</value>
-  </data>
-  <data name="EvSostFaz18" xml:space="preserve">
-    <value>Превышение допустимого тока фазы C</value>
-  </data>
-  <data name="EvSostFaz2" xml:space="preserve">
-    <value>Нет напряжения на фазе A</value>
-  </data>
-  <data name="EvSostFaz3" xml:space="preserve">
-    <value>Падение напряжения фазы A ниже допустимого</value>
-  </data>
-  <data name="EvSostFaz4" xml:space="preserve">
-    <value>Превышение допустимого напряжения фазы A</value>
-  </data>
-  <data name="EvSostFaz5" xml:space="preserve">
-    <value>Восстановление нормального напряжения фазы B</value>
-  </data>
-  <data name="EvSostFaz6" xml:space="preserve">
-    <value>Нет напряжения на фазе B</value>
-  </data>
-  <data name="EvSostFaz7" xml:space="preserve">
-    <value>Падение напряжения фазы B ниже допустимого</value>
-  </data>
-  <data name="EvSostFaz8" xml:space="preserve">
-    <value>Превышение допустимого напряжения фазы B</value>
-  </data>
-  <data name="EvSostFaz9" xml:space="preserve">
-    <value>Восстановление нормального напряжения фазы C</value>
-  </data>
-  <data name="NoKI" xml:space="preserve">
-    <value>В ответе не найден KI</value>
-  </data>
-  <data name="NoKU" xml:space="preserve">
-    <value>В ответе не найден KU</value>
-  </data>
-  <data name="NoLast" xml:space="preserve">
-    <value>Нет значения в счетчике</value>
-  </data>
-  <data name="NoSN" xml:space="preserve">
-    <value>В ответе не найден серийный номер</value>
+  <data name="NOT_COMPLIANT_FUNCTION" xml:space="preserve">
+    <value>Не соответствие запрошенной и ответившей функции</value>
   </data>
   <data name="NOT_PARAM" xml:space="preserve">
     <value>Прибор '{0}' не подерживает параметр {1}, дискретность {2}{3}. Рекомендуем обновить прошивку прибора</value>
   </data>
-  <data name="ReadKPRKIKU" xml:space="preserve">
-    <value>Чтение KI: {0}, KU:{1}</value>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="READ_IM" xml:space="preserve">
-    <value>Чтение мгновенных значений. Результат: {0}</value>
+  <data name="OPENING_COUNTER" xml:space="preserve">
+    <value>Открытие крышки счетчика</value>
   </data>
-  <data name="SliceTimeNotEqual" xml:space="preserve">
-    <value>Время дыры:{0} не совпало с временем среза:{1}</value>
+  <data name="PARAMETER" xml:space="preserve">
+    <value>Неизвестный параметр</value>
+  </data>
+  <data name="POWER_RESET" xml:space="preserve">
+    <value>Обнуление энергии</value>
+  </data>
+  <data name="PR_ACCUM" xml:space="preserve">
+    <value>(накопленный)</value>
+  </data>
+  <data name="PR_DAY" xml:space="preserve">
+    <value>(суточный)</value>
+  </data>
+  <data name="PR_MONTH" xml:space="preserve">
+    <value>(месячный)</value>
+  </data>
+  <data name="PR_YEAR" xml:space="preserve">
+    <value>(годовой)</value>
+  </data>
+  <data name="RESCHEDULE_HOLIDAYS" xml:space="preserve">
+    <value>Изменение расписания выходных дней</value>
+  </data>
+  <data name="SCAN_PASSWORD" xml:space="preserve">
+    <value>Сканирование пароля</value>
+  </data>
+  <data name="SEASON_SUMMER" xml:space="preserve">
+    <value>(сезона лето)</value>
+  </data>
+  <data name="SEASON_WINTER" xml:space="preserve">
+    <value>(сезона зима)</value>
+  </data>
+  <data name="SEGMENTS_RESET" xml:space="preserve">
+    <value>Обнуление срезов</value>
+  </data>
+  <data name="TARIFF_SCHEDULE_CHANGE" xml:space="preserve">
+    <value>Изменение тарифного расписания</value>
+  </data>
+  <data name="Test_DisableProtection" xml:space="preserve">
+    <value>Отключение защиты</value>
   </data>
   <data name="Test_DT" xml:space="preserve">
     <value>Чтение времени</value>
+  </data>
+  <data name="Test_KIKU" xml:space="preserve">
+    <value>Чтение коэф.</value>
+  </data>
+  <data name="Test_KPr" xml:space="preserve">
+    <value>Чтение коэф. преобразования</value>
   </data>
   <data name="Test_SN" xml:space="preserve">
     <value>Чтение серийного номера</value>
@@ -339,7 +327,61 @@
   <data name="Test_SV" xml:space="preserve">
     <value>Чтение версии</value>
   </data>
-  <data name="NotEqualAnswerPacket" xml:space="preserve">
-    <value>Заголовок ответа посылки не соответсвует заголовку запроса.</value>
+  <data name="TIME_CLOCK_FAILTURE" xml:space="preserve">
+    <value>Сбой часов реального времени</value>
+  </data>
+  <data name="UNAUTHORIZED" xml:space="preserve">
+    <value>Несанкционированный доступ</value>
+  </data>
+  <data name="WEEKEND_DAYS" xml:space="preserve">
+    <value>(для выходных)</value>
+  </data>
+  <data name="WORKING_DAYS" xml:space="preserve">
+    <value>(для рабочих дней)</value>
+  </data>
+  <data name="READ_IM" xml:space="preserve">
+    <value>Чтение мгновенных значений. Результат: {0}</value>
+  </data>
+  <data name="SYNC_ARCH" xml:space="preserve">
+    <value>Синхронизация архива</value>
+  </data>
+  <data name="Test_Error_Req" xml:space="preserve">
+    <value>Проверка границ архива</value>
+  </data>
+  <data name="ReadKU" xml:space="preserve">
+    <value>Чтение KU:{0}</value>
+  </data>
+  <data name="Read30Min" xml:space="preserve">
+    <value>Чтение 30-и минутных</value>
+  </data>
+  <data name="Read3Min" xml:space="preserve">
+    <value>Чтение 3-х минутных</value>
+  </data>
+  <data name="ReadDay" xml:space="preserve">
+    <value>Чтение суточных</value>
+  </data>
+  <data name="ReadHoles" xml:space="preserve">
+    <value>Получение дыр: От времени {0} Глубиной:{1} До макс.времени:{2} =&gt;выч.нач.время:{3} дыр:{4}</value>
+  </data>
+  <data name="ReadMonth" xml:space="preserve">
+    <value>Чтение месячных</value>
+  </data>
+  <data name="ReadYear" xml:space="preserve">
+    <value>Чтение годовых</value>
+  </data>
+  <data name="INVALID_FORMAT" xml:space="preserve">
+    <value>Неверный формат пакета</value>
+  </data>
+  <data name="NOT_CORRESPOND_TO_CONFIG" xml:space="preserve">
+    <value>Текущая конфигурация не позволяет выполнение команды</value>
+  </data>
+  <data name="OPTOPORT_ERROR" xml:space="preserve">
+    <value>Для работы с оптопортом нажмите кнопку Доступ</value>
+  </data>
+  <data name="UNACCEPTABLE_TARIFF" xml:space="preserve">
+    <value>Недопустиммая тарифная программа</value>
+  </data>
+  <data name="PACKET_LENGTH_ABNORMAL" xml:space="preserve">
+    <value>Ненормальная длина пакета</value>
   </data>
 </root>
