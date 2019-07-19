@@ -3,33 +3,26 @@
   <ObjectModel>
     <Namespace Name="Sys.Services.Drv" >
       
-      <Enum Name="EmeraProtectLevel" BaseEnum="Byte" CodeSummary="предусмотрено 2 уровня доступа – основной и вспомогательный">
-        <EnumItem Name="None" Value="2" CodeSummary="Уровень отсутствует"/>
-        <EnumItem Name="Base" Value="0" CodeSummary="Основной уровень позволяет модифицировать все параметры, отмеченные знаком ‘+’ в полях 
-                  ‘Модификация’ и ‘Обнуление’ таблицы A.1 приложения А"/>
-        <!--
-        <EnumItem Name="Aux" Value="1" CodeSummary="вспомогательный распространяется только на 3 параметра:  сетевой адрес (21), 
-                  конфигурация порта связи (23) и маска отображаемых параметров (35). Каждый из уровней имеет свой собственный пароль."/>
-         -->
-      </Enum>
-      
       <Class Name="EmeraSharedSetting" Area="Public">
+	<Property Type="Boolean" Name="EnblCounterTariff1" Default="false" CodeSummary="Забирать показания по тарифу 1" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff2" Default="false" CodeSummary="Забирать показания по тарифу 2" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff3" Default="false" CodeSummary="Забирать показания по тарифу 3" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff4" Default="false" CodeSummary="Забирать показания по тарифу 4" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff5" Default="false" CodeSummary="Забирать показания по тарифу 5" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff6" Default="false" CodeSummary="Забирать показания по тарифу 6" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff7" Default="false" CodeSummary="Забирать показания по тарифу 7" /> 
+	<Property Type="Boolean" Name="EnblCounterTariff8" Default="false" CodeSummary="Забирать показания по тарифу 8" />
+	<Property Type="Boolean" Name="Enbl30min" Default="true" CodeSummary="Опрос получасов. Если выключен, то запбирать только сутки и месяц." />
         <Property Type="Boolean" Name="EnblTimeCorr" Default="true" CodeSummary="Включить корректировку времени"/>
-        <Property Type="Boolean" Name="Enbl3min"   CodeSummary="Включить опрос трехминутных значений" Default="false"/>
-        <Property Type="Boolean" Name="EnblEvents" CodeSummary="Включить опрос событий"/>
+        <Property Type="Boolean" Name="EnblEvents" CodeSummary="Включить опрос событий" Default="false"/>
         <Property Type="Boolean" Name="EnblIm" CodeSummary="Включить опрос мгновенных значений" Default="false" />
-        <Property Type="EmeraProtectLevel"  Name="Level" Default="None" CodeSummary="Уровень доступа. Если включен то 
-                  система производит установку времени если нет корректировку"/>
-        <Property Type="String"  Name="Psw" Default="00000000" CodeSummary="Пароль по умолчанию"/>
         <Property Type="ScheduleDbWrap" Name="Arch" CodeSummary="Рассписание синхронизации архивных данных"/>
         <Property Type="ScheduleDbWrap" Name="Im" CodeSummary="Рассписание чтения мгновенных значений"/>
       </Class>
 
       <Class Name="EmeraContentSetting" Area="Public">
         <Property Type="Int32" Name="Address" CodeSummary="Адресс прибора в сети"/>
-        <Property Type="Boolean" Name="KU_KI_Dev" CodeSummary="Считывать KU KI с устройства"/>
-        <Property Type="Double" Name="KI" Default="1" CodeSummary="KI"/>
-        <Property Type="Double" Name="KU" Default="1" CodeSummary="KU"/>
+        <Property Type="String"  Name="Psw" Default="0000" CodeSummary="Пароль по умолчанию"/>
       </Class>
 
       <Class Name="EmeraSynchState" Area="Internal" >
