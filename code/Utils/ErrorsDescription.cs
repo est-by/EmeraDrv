@@ -17,7 +17,7 @@ namespace Sys.Services.Drv.Emera.Utils
                 case 0x05: return SR.OPTOPORT_ERROR;
                 case 0x10: return SR.PARAMETER;
                 case 0x40: return SR.UNACCEPTABLE_TARIFF;
-                default: return string.Empty; 
+                default: return string.Empty;
             }
         }
     }
