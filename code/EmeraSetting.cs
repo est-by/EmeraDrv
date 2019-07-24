@@ -382,6 +382,7 @@ namespace Sys.Services.Drv {
                 return _psw;
             }
             set {
+                if (value.Length != 4) return;
                 this._psw = value;
             }
         }
