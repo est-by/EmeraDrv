@@ -590,6 +590,7 @@ namespace Sys.Services.Drv.Emera.Transport
                     }
                 } while (isRead);
                 byte[] readBuf = decodePacket(read.ToArray());
+                sendBuf = decodePacket(sendBuf);
 
                 channel.DiscardInBuffer();
                 channel.DiscardOutBuffer();

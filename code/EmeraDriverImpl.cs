@@ -564,6 +564,7 @@ namespace Sys.Services.Drv.Emera
         public override TestResult Test(TestRequestDataDrv request)
         {
             TestResult result = new TestResult();
+            Log.Trace.Info(1, "Test request processing started");
 
             var drvSetting = request.GetDriverSetting(() => new DriverSetting());
             var cs = request.GetContentSetting<EmeraContentSetting>(() => new EmeraContentSetting());
@@ -584,6 +585,7 @@ namespace Sys.Services.Drv.Emera
             {
                 DateTimeUtc dateTimeUtcPrb = DateTimeUtc.MinValue;
                 int timeTwoSidePathMsec;
+                //Log.Trace.Info(1, "Test request processing datetime");
                 if (!OneTest(SR.Test_DT, request, result, () =>
                     {
                         var res = emera.TryReadDateTime(this.Channel, cs.Address, cs.Psw, TimeZoneMap.Local, out dateTimeUtcPrb, out timeTwoSidePathMsec);
@@ -592,6 +594,7 @@ namespace Sys.Services.Drv.Emera
                 TimeSpan diffTime = DateTimeUtc.Now - dateTimeUtcPrb;
 
                 string sn = string.Empty;
+                //Log.Trace.Info(1, "Test request processing serial");
                 if (!OneTest(SR.Test_SN, request, result, () =>
                     {
                         var res = emera.TryReadSerialNumber(this.Channel, cs.Address, cs.Psw, out sn);
@@ -599,6 +602,7 @@ namespace Sys.Services.Drv.Emera
                     })) return result;
 
                 string deviceConfiguration = string.Empty;
+                //Log.Trace.Info(1, "Test request processing config");
                 if (!OneTest(SR.Test_SV, request, result, () =>
                     {
                         var res = emera.TryReadDeviceConfiguration(this.Channel, cs.Address, cs.Psw, out deviceConfiguration, true);
@@ -612,6 +616,7 @@ namespace Sys.Services.Drv.Emera
                   return new MsgTest(res, res.IsGood ? "" : "Ok");
                 }, true)) return result;*/
 
+                //Log.Trace.Info(1, "Test request processing finished");
                 result.Message = String.Format("Сер.Номер: {0}, Временной разрыв: {1} sec, Конфигурация: {2}", sn, (int)diffTime.TotalSeconds, deviceConfiguration);
         }
         return result;
