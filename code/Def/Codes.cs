@@ -36,5 +36,5 @@ namespace Sys.Services.Drv.Emera.Def
         public const ushort CODE_READ_ENERGY_INTERVAL = 0x0134;
         public const ushort CODE_READ_POWER_CURR = 0x0132;
         public const ushort CODE_READ_POWER_3MIN = 0x012E;
-    } 
+    }
 }

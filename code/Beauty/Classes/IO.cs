@@ -49,7 +49,7 @@ namespace Sys.Services.Drv.Emera
             pInfo.SerialNumber = pInfo.SerialNumber.Trim();
             string deviceConfiguration;
             res = info.Request.TryReadDeviceConfiguration(
-                info.DataBus, 
+                info.DataBus,
                 info.Cs.Address,
                 info.Cs.Psw,
                 out deviceConfiguration);
@@ -201,24 +201,24 @@ namespace Sys.Services.Drv.Emera
                                     out read);
                                 read.Calc(info.DeviceKoef);
                                 break;
-                            #endregion
-                            /*#region (case TypeQuery.Power3min:)
-                            case TypeQuery.Power3min:
-                              AvPowerIndex pi;
-                              oper = info.Request.TryReadAvPower3min(
-                                info.DataBus, 
-                                info.Session.TimeDevice, 
-                                info.Session.Zone, 
-                                RequestIndex.From(item, typeInc, info.Cs.Address, false), 
-                                item, 
-                                out pi);
-                              if (oper.IsGood)
-                                read = pi.Power.ToEnergy(20);
-                              break;
-                            #endregion*/
+                                #endregion
+                                /*#region (case TypeQuery.Power3min:)
+                                case TypeQuery.Power3min:
+                                  AvPowerIndex pi;
+                                  oper = info.Request.TryReadAvPower3min(
+                                    info.DataBus, 
+                                    info.Session.TimeDevice, 
+                                    info.Session.Zone, 
+                                    RequestIndex.From(item, typeInc, info.Cs.Address, false), 
+                                    item, 
+                                    out pi);
+                                  if (oper.IsGood)
+                                    read = pi.Power.ToEnergy(20);
+                                  break;
+                                #endregion*/
                         }
                         //Может возникать ситуация когда на компе уже наступило время опроса а на счетчике нет и будет возвращен блок поврежден
-            //TODO      if ((itemNum < 3) && (oper.Quality == Quality.BadNoRestore)) oper.Quality = Quality.Bad;
+                        //TODO      if ((itemNum < 3) && (oper.Quality == Quality.BadNoRestore)) oper.Quality = Quality.Bad;
                     }
 
                     /*if ((!oper.IsGood) && (oper.Code == 2))
@@ -266,84 +266,84 @@ namespace Sys.Services.Drv.Emera
         }
         #endregion
 
-    #region (ReadEvents)
-    /*internal static void ReadEvents(QueryInfo info, EmeraArchiveEvents typeEvent, Type[]  typeFilter)
-    {
-      if (DataBusSetting.StubData) return;
-
-      var filter = new StructDataTypeFilter[typeFilter.Length];
-      for (int i = 0; i < typeFilter.Length; i++) filter[i] = new StructDataTypeFilter(typeFilter[i]);
-
-      var lastVal = info.Storage.ReadLastValue(filter, info.Events);
-
-      DateTimeZone from = DateTimeZone.MinValue;
-      if ((lastVal != null) && (lastVal[0].Error == DataError.Ok))
-        from = lastVal[0].Value.Data.Time.ToDateTimeZone(info.NextPoint.Zone);
-
-      var listEvent = new List<HistoryEvent>();
-      var listEventSrc = new List<Event>();
-      OperationResult res;
-      //Значит записываем сообщения
-      bool writeListEvent = false;
-
-      info.Log.Trace.Write(2, (l) => l.Info("Read events from {0}", from.ToString()));
-
-      Byte depth = 1;
-      for (; depth <= EmeraRequest.DepthEvents; depth++)
-      {
-        if (info.Session.BeginOperation())
+        #region (ReadEvents)
+        /*internal static void ReadEvents(QueryInfo info, EmeraArchiveEvents typeEvent, Type[]  typeFilter)
         {
-          bool _break = false;
-          Event ev;
-          res = info.Request.TryGetAnyEvents(
-            info.DataBus, 
-            info.Cs.Address, 
-            info.Cs.Psw,
-            typeEvent, 
-            depth, 
-            out ev, 
-            info.NextPoint.Zone);
+          if (DataBusSetting.StubData) return;
 
-          if ((res.IsGood) && (ev.EmeraEvent == null))
+          var filter = new StructDataTypeFilter[typeFilter.Length];
+          for (int i = 0; i < typeFilter.Length; i++) filter[i] = new StructDataTypeFilter(typeFilter[i]);
+
+          var lastVal = info.Storage.ReadLastValue(filter, info.Events);
+
+          DateTimeZone from = DateTimeZone.MinValue;
+          if ((lastVal != null) && (lastVal[0].Error == DataError.Ok))
+            from = lastVal[0].Value.Data.Time.ToDateTimeZone(info.NextPoint.Zone);
+
+          var listEvent = new List<HistoryEvent>();
+          var listEventSrc = new List<Event>();
+          OperationResult res;
+          //Значит записываем сообщения
+          bool writeListEvent = false;
+
+          info.Log.Trace.Write(2, (l) => l.Info("Read events from {0}", from.ToString()));
+
+          Byte depth = 1;
+          for (; depth <= EmeraRequest.DepthEvents; depth++)
           {
-            info.LogWarn("Error parse event {0}. {1}:{2}", info.DisplayName, typeEvent, ev.Code);
-            break;
+            if (info.Session.BeginOperation())
+            {
+              bool _break = false;
+              Event ev;
+              res = info.Request.TryGetAnyEvents(
+                info.DataBus, 
+                info.Cs.Address, 
+                info.Cs.Psw,
+                typeEvent, 
+                depth, 
+                out ev, 
+                info.NextPoint.Zone);
+
+              if ((res.IsGood) && (ev.EmeraEvent == null))
+              {
+                info.LogWarn("Error parse event {0}. {1}:{2}", info.DisplayName, typeEvent, ev.Code);
+                break;
+              }
+
+              //Заканчиваем по коду 5, если по этому времени мы уже считали, достигли макс глубины
+              //Думаю надо изменить from >= ev.DataEvent т.к. похоже есть какойто баг возможно в приборе
+              if (((!res.IsGood) && (res.Code == 5)) || ((res.IsGood) && (from >= ev.DateEvent)))
+              {
+                if (listEvent.Count != 0) writeListEvent = true;
+                _break = true;
+                res = OperationResult.Good;
+              }
+              info.Session.EndOperation(res);
+
+              if (!_break) info.Log.Trace.Info(2, "Read event from [{0}] {1}. {2}", depth, typeEvent, ((res.IsGood) && (ev != null)) ? ev.ToString() : "");
+
+              if ((_break) || (!res.IsGood)) break;
+              listEvent.Add(new HistoryEvent(info.Events, ev.EmeraEvent, ev.DateEvent, Quality.Good));
+              listEventSrc.Add(ev);
+              if ((depth == EmeraRequest.DepthEvents) && (listEvent.Count != 0)) writeListEvent = true;
+            }
           }
 
-          //Заканчиваем по коду 5, если по этому времени мы уже считали, достигли макс глубины
-          //Думаю надо изменить from >= ev.DataEvent т.к. похоже есть какойто баг возможно в приборе
-          if (((!res.IsGood) && (res.Code == 5)) || ((res.IsGood) && (from >= ev.DateEvent)))
+          if (writeListEvent)
           {
-            if (listEvent.Count != 0) writeListEvent = true;
-            _break = true;
-            res = OperationResult.Good;
+            info.Storage.WriteEvents(listEvent.ToArray());
           }
-          info.Session.EndOperation(res);
+        }*/
+        #endregion
 
-          if (!_break) info.Log.Trace.Info(2, "Read event from [{0}] {1}. {2}", depth, typeEvent, ((res.IsGood) && (ev != null)) ? ev.ToString() : "");
+        #region (ReadAllEvents)
+        /*internal static void ReadAllEvents(QueryInfo info)
+        {
+          IO.ReadEvents(info, EmeraArchiveEvents.EventAdjustments, Event.GetUsedTypes(EmeraArchiveEvents.EventAdjustments));
+          IO.ReadEvents(info, EmeraArchiveEvents.EventPhase, Event.GetUsedTypes(EmeraArchiveEvents.EventPhase));
+          IO.ReadEvents(info, EmeraArchiveEvents.EventStateEquipment, Event.GetUsedTypes(EmeraArchiveEvents.EventStateEquipment));
+        }*/
+        #endregion
 
-          if ((_break) || (!res.IsGood)) break;
-          listEvent.Add(new HistoryEvent(info.Events, ev.EmeraEvent, ev.DateEvent, Quality.Good));
-          listEventSrc.Add(ev);
-          if ((depth == EmeraRequest.DepthEvents) && (listEvent.Count != 0)) writeListEvent = true;
-        }
-      }
-
-      if (writeListEvent)
-      {
-        info.Storage.WriteEvents(listEvent.ToArray());
-      }
-    }*/
-    #endregion
-
-    #region (ReadAllEvents)
-    /*internal static void ReadAllEvents(QueryInfo info)
-    {
-      IO.ReadEvents(info, EmeraArchiveEvents.EventAdjustments, Event.GetUsedTypes(EmeraArchiveEvents.EventAdjustments));
-      IO.ReadEvents(info, EmeraArchiveEvents.EventPhase, Event.GetUsedTypes(EmeraArchiveEvents.EventPhase));
-      IO.ReadEvents(info, EmeraArchiveEvents.EventStateEquipment, Event.GetUsedTypes(EmeraArchiveEvents.EventStateEquipment));
-    }*/
-    #endregion
-
-  }
+    }
 }

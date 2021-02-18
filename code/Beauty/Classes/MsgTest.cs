@@ -6,18 +6,18 @@ using System.Text;
 
 namespace Sys.Services.Drv.Emera
 {
-  #region (class MsgTest)
-  internal class MsgTest
-  {
-    public OperationResult OperationResult;
-    public String Message;
-
-    public MsgTest(OperationResult operationResult, String message = "")
+    #region (class MsgTest)
+    internal class MsgTest
     {
-      this.OperationResult = operationResult;
-      this.Message = message;
+        public OperationResult OperationResult;
+        public String Message;
+
+        public MsgTest(OperationResult operationResult, String message = "")
+        {
+            this.OperationResult = operationResult;
+            this.Message = message;
+        }
     }
-  }
-  #endregion
+    #endregion
 
 }

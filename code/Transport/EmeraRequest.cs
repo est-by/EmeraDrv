@@ -119,7 +119,7 @@ namespace Sys.Services.Drv.Emera.Transport
         {
             OperationResult result = OperationResult.Bad;
             response = null;
-            var send =  CreateRequest(address, Codes.CODE_READ_SERIAL_NUMBER, psw, 0x00);
+            var send = CreateRequest(address, Codes.CODE_READ_SERIAL_NUMBER, psw, 0x00);
             result = WriteReadCheck(channel, nRepeatGlobal, send, out byte[] answer);
             if (!result.IsGood) return result;
             try
@@ -441,7 +441,7 @@ namespace Sys.Services.Drv.Emera.Transport
             }
             return result;
         }
-   
+
 
         /// <summary>Показание счетчика с момента запуска</summary>
         /*private OperationResult TryReadEnergyFromLaunch(IIODriverClient channel, ShortRequest request, out Energy response)
@@ -487,7 +487,7 @@ namespace Sys.Services.Drv.Emera.Transport
                 if (value == 0xFFFFFF)
                 {
                     response = new Energy(0, 0, 0, 0); //это значит что его нет в памяти и надо возвращать нули
-                    return OperationResult.Bad; 
+                    return OperationResult.Bad;
                 }
                 response = new Energy(value, 0, 0, 0);
                 result = OperationResult.Good;
@@ -614,7 +614,7 @@ namespace Sys.Services.Drv.Emera.Transport
                 {
                     readPacket[i] = readBuf[i + 9];
                     i++;
-                } 
+                }
                 return result;
             }
             catch (Exception e)
@@ -645,7 +645,7 @@ namespace Sys.Services.Drv.Emera.Transport
             //пакет
             for (int i = 0; i < 4; i++)
             {
-                byte b = byte.Parse(psw.Substring(i,1));
+                byte b = byte.Parse(psw.Substring(i, 1));
                 buff.Add(b);
             }
             /*buff.Add(0);

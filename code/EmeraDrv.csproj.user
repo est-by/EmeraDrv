@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\EST\eMaxTools\bin\SandboxHost.exe</StartProgram>
-    <StartArguments>--tdn:%2a --tout:console</StartArguments>
+    <StartProgram>u:\project\bin\SandboxHost.exe</StartProgram>
+    <StartArguments>--tdn:%2a --tout:console --decision:..\setting\Decision\decision.sdk.web.xml</StartArguments>
   </PropertyGroup>
 </Project>
