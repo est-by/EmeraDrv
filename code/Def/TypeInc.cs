@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Sys.Services.Drv.Emera.Def
 {
-    /// <summary>Тип накопленной энергии</summary>
-    public enum TypeInc
-    {
-        Min3,
-        Min30,
-        Day,
-        Month,
-        Year
-    }
+  /// <summary>Тип накопленной энергии</summary>
+  public enum TypeInc
+  {
+    Min3,
+    Min30,
+    Day,
+    Month,
+    Year
+  }
 }

@@ -19,17 +19,17 @@ namespace Sys.Services.Drv.Emera
 {
     public class EmeraDriver : Sys.Types.Components.DriverElectroClient
     {
-        #region (FineTune)
-        static FineTune FineTune;
-        static EmeraDriver()
-        {
-            FineTune = FineTune.TryLoad("emeraelectro");
-        }
+    #region (FineTune)
+    static FineTune FineTune;
+    static EmeraDriver()
+    {
+      FineTune = FineTune.TryLoad("emeraelectro");
+    }
 
-        public Int32 ReadTimeOutRequestMSec()
-        {
-            return FineTune.ReadValue<int>("TimeOutRequestMSec", this, (v) => Int32.Parse(v), EmeraRequest.TimeOutRequestMSecDeafult);
-        }
+    public Int32 ReadTimeOutRequestMSec()
+    {
+      return FineTune.ReadValue<int>("TimeOutRequestMSec", this, (v) => Int32.Parse(v), EmeraRequest.TimeOutRequestMSecDeafult);
+    }
         #endregion
 
         /// <summary>Идентификатор типа реализации компонента</summary>
@@ -124,6 +124,7 @@ namespace Sys.Services.Drv.Emera
         public override SynchResponse Synch(SynchRequestDataDrv requestData, SynchParamsDataDrv requestParam)
         {
             Log.Trace.Write(1, (l) => l.Info(SR.SYNC_ARCH));
+            requestParam.HolesMode = QueryHolesMode.WithoutGeneration;
             var info = new QueryInfo(
                 this,
                 requestData,
@@ -152,7 +153,7 @@ namespace Sys.Services.Drv.Emera
 
 
                 var eDef = info.ElectroChannel.Energy;
-                var eDefCounter = info.ElectroChannel.Counter;
+                var eDefCounter = info.ElectroChannel.Counter;                
                 /*if (session.LaunchPoint(info.NextPoint.Min3))
                 {
                   Log.Trace.Info(1, SR.Read3Min);
@@ -173,19 +174,19 @@ namespace Sys.Services.Drv.Emera
                 #region if (session.LaunchPoint(info.NextPoint.Min30))
                 if (session.LaunchPoint(info.NextPoint.Min30))
                 {
-                    Log.Trace.Info(1, SR.Read30Min);
-                    IO.ReadInc(
-                      info,
-                      TimeStep.Minute_30.Round(info.NowTimeInZone),
-                      TypeQuery.SlicesEnergy,
-                      TypeInc.Min30,
-                      eDef.Aplus.Min30,
-                      eDef.Aminus.Min30,
-                      eDef.Rplus.Min30,
-                      eDef.Rminus.Min30,
-                      EmeraRequest.Depth30MinDefault,
-                      FineTuneUtils.ReadDeepSync30Local(FineTune, this, requestParam.DeepSync, EmeraRequest.Depth30MinDefault));
-                    //if ((!info.Ss.Enbl3min) &&  (info.Ss.EnblEvents)) IO.ReadAllEvents(info);
+                  Log.Trace.Info(1, SR.Read30Min);
+                  IO.ReadInc(
+                    info,
+                    TimeStep.Minute_30.Round(info.NowTimeInZone), 
+                    TypeQuery.SlicesEnergy, 
+                    TypeInc.Min30, 
+                    eDef.Aplus.Min30, 
+                    eDef.Aminus.Min30,
+                    eDef.Rplus.Min30, 
+                    eDef.Rminus.Min30, 
+                    EmeraRequest.Depth30MinDefault,
+                    FineTuneUtils.ReadDeepSync30Local(FineTune, this, requestParam.DeepSync, EmeraRequest.Depth30MinDefault));
+                  //if ((!info.Ss.Enbl3min) &&  (info.Ss.EnblEvents)) IO.ReadAllEvents(info);
                 }
                 #endregion
                 #region if (session.LaunchPoint(info.NextPoint.Day1))
@@ -206,36 +207,36 @@ namespace Sys.Services.Drv.Emera
 
                     IO.ReadInc(
                         info,
-                        TimeStep.Day_1.Round(info.NowTimeInZone)/*.AddDays(-1)*/,
-                        TypeQuery.Counter,
-                        TypeInc.Day,
-                        eDefCounter.Aplus.Day1,
+                        TimeStep.Day_1.Round(info.NowTimeInZone)/*.AddDays(-1)*/, 
+                        TypeQuery.Counter, 
+                        TypeInc.Day, 
+                        eDefCounter.Aplus.Day1, 
                         eDefCounter.Aminus.Day1,
-                        eDefCounter.Rplus.Day1,
-                        eDefCounter.Rminus.Day1,
-                        EmeraRequest.DepthDayCounter,
+                        eDefCounter.Rplus.Day1, 
+                        eDefCounter.Rminus.Day1, 
+                        EmeraRequest.DepthDayCounter, 
                         requestParam.DeepSync,
                         ETariff.NoTariff);
 
                     #region if (info.Ss.EnblCounterTariff1)
-                    if (info.Ss.EnblCounterTariff1)
+                    if (info.Ss.EnblCounterTariff1) 
                     {
                         IO.ReadInc(
-                            info,
-                            TimeStep.Day_1.Round(info.NowTimeInZone)/*.AddDays(-1)*/,
-                            TypeQuery.Counter,
-                            TypeInc.Day,
-                            eDefCounter.Aplus.Day1Tariff1,
-                            eDefCounter.Aminus.Day1Tariff1,
-                            eDefCounter.Rplus.Day1Tariff1,
-                            eDefCounter.Rminus.Day1Tariff1,
-                            EmeraRequest.DepthDayCounter,
-                            requestParam.DeepSync,
+                            info, 
+                            TimeStep.Day_1.Round(info.NowTimeInZone)/*.AddDays(-1)*/, 
+                            TypeQuery.Counter, 
+                            TypeInc.Day, 
+                            eDefCounter.Aplus.Day1Tariff1, 
+                            eDefCounter.Aminus.Day1Tariff1, 
+                            eDefCounter.Rplus.Day1Tariff1, 
+                            eDefCounter.Rminus.Day1Tariff1, 
+                            EmeraRequest.DepthDayCounter, 
+                            requestParam.DeepSync, 
                             ETariff.Tariff1);
                     }
                     #endregion
                     #region if (info.Ss.EnblCounterTariff2)
-                    if (info.Ss.EnblCounterTariff2)
+                    if (info.Ss.EnblCounterTariff2) 
                     {
                         IO.ReadInc(
                           info,
@@ -618,9 +619,9 @@ namespace Sys.Services.Drv.Emera
 
                 //Log.Trace.Info(1, "Test request processing finished");
                 result.Message = String.Format("Сер.Номер: {0}, Временной разрыв: {1} sec, Конфигурация: {2}", sn, (int)diffTime.TotalSeconds, deviceConfiguration);
-            }
-            return result;
         }
+        return result;
+    }
         #endregion
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Sys.Services.Drv.Emera
 {
-    internal enum TypeQuery
-    {
-        SlicesEnergy,
-        Inc,
-        Counter,
-        Power3min
-    }
+  internal enum TypeQuery
+  {
+      SlicesEnergy,
+      Inc,
+      Counter,
+      Power3min
+  }
 }
